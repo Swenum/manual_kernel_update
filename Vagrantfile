@@ -5,9 +5,9 @@ MACHINES = {
               # VM box
               :box_name => "centos/7",
               # VM CPU count
-              :cpus => 2,
+              :cpus => 4,
               # VM RAM size (Mb)
-              :memory => 1024,
+              :memory => 4096,
               # networks
               :net => [],
               # forwarded ports
@@ -44,4 +44,5 @@ Vagrant.configure("2") do |config|
       end
     end
   end
+  config.vm.provision :shell, :path => "bootstrap.sh"
 end
